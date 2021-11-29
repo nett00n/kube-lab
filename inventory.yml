@@ -1,0 +1,7 @@
+all:
+  children:
+    kube:
+      hosts:
+        alpha.kube-lab.5mdt.tk:
+          ansible_user: ubuntu
+          ansible_host: 192.168.88.28

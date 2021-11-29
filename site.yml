@@ -1,0 +1,9 @@
+---
+
+- hosts:
+  - kube
+  become: true
+  roles:
+    - authorization
+    - hostname
+    - kube

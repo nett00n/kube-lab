@@ -1,0 +1,11 @@
+---
+
+- lineinfile:
+    dest: /etc/sudoers
+    regex: "^%sudo ALL=(ALL)"
+    line: "%sudo ALL=(ALL) NOPASSWD: ALL"
+
+- ansible.builtin.get_url:
+    url: https://github.com/nett00n.keys
+    dest: /home/ubuntu/.ssh/authorized_keys
+    mode: 0600
