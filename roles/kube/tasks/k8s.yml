@@ -13,3 +13,4 @@
       - kubeadm
       - kubelet
       - kubectl
+      - docker.io
