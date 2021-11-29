@@ -1,0 +1,15 @@
+---
+
+- ansible.builtin.file:
+    dest: /home/ubuntu/.local/bin/
+    state: directory
+
+- lineinfile:
+    dest: /home/ubuntu/.bashrc
+    regex: '^PATH="${PATH}:'
+    line: 'PATH="${PATH}:/home/ubuntu/.local/bin/"'
+
+- ansible.builtin.get_url:
+    url: https://dl.k8s.io/release/v1.22.4/bin/linux/amd64/kubectl
+    dest: /home/ubuntu/.local/bin/kubectl
+    mode: 0740
