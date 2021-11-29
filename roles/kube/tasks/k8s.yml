@@ -1,0 +1,15 @@
+---
+- ansible.builtin.apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- ansible.builtin.apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+
+- ansible.builtin.package:
+    name:
+      - kubeadm
+      - kubelet
+      - kubectl
